@@ -17,7 +17,7 @@ styles = Styl
     justifyContent: 'center'
 
   button:
-    width: 100
+    width: 120
     height: 30
     padding: 10
     backgroundColor: 'lightgray'
@@ -30,7 +30,9 @@ module.exports = cfx ->
   {
     counter
     increment
+    incrementAsync
     decrement
+    decrementAsync
   } = @props
 
   View style: styles.root
@@ -47,8 +49,22 @@ module.exports = cfx ->
       , 'up'
   ,
     TouchableOpacity
+      onPress: -> incrementAsync()
+      style: styles.button
+    ,
+      Text {}
+      , 'up(async)'
+  ,
+    TouchableOpacity
       onPress: -> decrement()
       style: styles.button
     ,
       Text {}
       , 'down'
+  ,
+    TouchableOpacity
+      onPress: -> decrementAsync()
+      style: styles.button
+    ,
+      Text {}
+      , 'down(async)'
