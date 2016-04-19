@@ -37,10 +37,7 @@ function cleanPrj {
 }
 
 function install {
-  $npmInstall
-  rm -rf $cwd/node_modules/lodash-*
-  rm -rf $cwd/node_modules/lodash.*
-  $npmInstall lodash.template
+  ${npmInstall}
 }
 
 function reinstall {
@@ -48,9 +45,13 @@ function reinstall {
   install
 }
 
-function gulpF {
+function build {
+  coffee -bo $cwd/build $cwd/src
+}
+
+function rebuild {
   cleanPrj
-  gulp
+  build
 }
 
 function start {
@@ -78,7 +79,8 @@ function helper {
   echo '  clean:prj:      clean dirctorys without push to git'
   echo '  install:        install require packages'
   echo '  reinstall:      reinstall require packages'
-  echo '  gulp:           run default gulp task'
+  echo '  build:          build project'
+  echo '  rebuild:        rebuild project'
   echo '  start:          start dev server of RN'
   echo '  update:         check local pkgs version'
   echo '  watchman:       rewatch use watchman command'
@@ -108,8 +110,12 @@ function main {
       reinstall
       ;;
 
-    gulp )
-      gulpF
+    build )
+      build
+      ;;
+
+    rebuild )
+      rebuild
       ;;
 
     start )

@@ -6,10 +6,23 @@
     "index.android.js",
     "index.ios.js"
   ],
+  "watch": {
+    "build": {
+      "patterns": "src",
+      "extensions": "coffee"
+    }
+  },
   "scripts": {
     "test": "./test/index.coffee",
-    "clean": "rm -rf build",
-    "build": "npm run clean; coffee -bo build src"
+    "clean:rn": "./npm.sh clean:rn",
+    "clean:prj": "./npm.sh clean:prj",
+    "install": "./npm.sh install",
+    "reinstall": "./npm.sh reinstall",
+    "build": "./npm.sh build",
+    "rebuild": "./npm.sh rebuild",
+    "watch": "npm run clean:prj; npm-watch",
+    "start": "./npm.sh start",
+    "update": "./npm.sh update"
   },
   "repository": {
     "type": "git",
@@ -26,6 +39,7 @@
   "homepage": "https://github.com/react-cfx/example-cfx-rn-counter#readme",
   "devDependencies": {
     "ddeyes": "^0.0.1",
+    "npm-watch": "^0.1.4",
     "shelljs": "^0.6.0"
   },
   "dependencies": {
