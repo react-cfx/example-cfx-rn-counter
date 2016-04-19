@@ -1,0 +1,41 @@
+{
+  "name": "ExampleCfxRnCounter",
+  "version": "0.0.0",
+  "description": "example-cfx-rn-counter",
+  "main": [
+    "index.android.js",
+    "index.ios.js"
+  ],
+  "scripts": {
+    "test": "./test/index.coffee",
+    "clean": "rm -rf build",
+    "build": "npm run clean; coffee -bo build src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/react-cfx/example-cfx-rn-counter.git"
+  },
+  "keywords": [
+    "cfx"
+  ],
+  "author": "FooTearth <footearth@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/react-cfx/example-cfx-rn-counter/issues"
+  },
+  "homepage": "https://github.com/react-cfx/example-cfx-rn-counter#readme",
+  "devDependencies": {
+    "ddeyes": "^0.0.1",
+    "shelljs": "^0.6.0"
+  },
+  "dependencies": {
+    "cfx.example-cfx-redux-counter": "git+https://github.com/react-cfx/example-cfx-redux-counter.git",
+    "cfx.redux": "git+https://github.com/react-cfx/cfx.redux.git",
+    "cfx.redux-saga": "git+https://github.com/react-cfx/cfx.redux-saga.git",
+    "cfx.rn": "git+https://github.com/react-cfx/cfx.rn.git",
+    "coffee-script": "^1.10.0",
+    "react": "^0.14.8",
+    "react-native": "^0.23.1",
+    "redux-logger": "^2.6.1"
+  }
+}
