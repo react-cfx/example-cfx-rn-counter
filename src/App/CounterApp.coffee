@@ -20,6 +20,8 @@ CounterApp = cfx ->
     , counter: state.count
   )
 
-module.exports = connect 'countApp'
-, counterActions
-, CounterApp
+module.exports = connect(
+  (state) -> state.countApp
+  counterActions
+  CounterApp
+)
