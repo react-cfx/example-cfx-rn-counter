@@ -42,14 +42,15 @@
     "npm-watch": "^0.1.4",
     "shelljs": "^0.6.0"
   },
+  "_dependencies": {
+    "cfx.rn": "../cfx.rn"
+  },
   "dependencies": {
     "cfx.example-cfx-redux-counter": "git+https://github.com/react-cfx/example-cfx-redux-counter.git",
     "cfx.redux": "git+https://github.com/react-cfx/cfx.redux.git",
     "cfx.redux-saga": "git+https://github.com/react-cfx/cfx.redux-saga.git",
     "cfx.rn": "git+https://github.com/react-cfx/cfx.rn.git",
     "coffee-script": "^1.10.0",
-    "react": "^0.14.8",
-    "react-native": "^0.23.1",
     "redux-logger": "^2.6.1"
   }
 }
